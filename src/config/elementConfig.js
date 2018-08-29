@@ -1,0 +1,59 @@
+import Vue from 'vue';
+import 'element-ui/lib/theme-chalk/index.css';
+import {
+    Button,
+    Carousel,
+    CarouselItem,
+    Collapse,
+    CollapseItem,
+    Header,
+    Main,
+    Footer,
+    Tag,
+    Transfer,
+    Pagination,
+    Icon,
+    Menu,
+    Submenu,
+    MenuItem,
+    MenuItemGroup,
+    Form,
+    FormItem,
+    Input,
+    DatePicker,
+    Radio,
+    RadioGroup,
+    Select,
+    Option,
+    Checkbox,
+    Table,
+    TableColumn
+} from 'element-ui';
+
+Vue.use(Button);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
+Vue.use(Header);
+Vue.use(Footer);
+Vue.use(Main);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+Vue.use(Tag);
+Vue.use(Transfer);
+Vue.use(Pagination);
+Vue.use(Icon);
+Vue.use(Menu);
+Vue.use(Submenu);
+Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(DatePicker);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(Select);
+Vue.use(Option);
+Vue.use(Checkbox);
+Vue.use(Table);
+Vue.use(TableColumn);

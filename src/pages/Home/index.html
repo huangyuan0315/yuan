@@ -1,0 +1,15 @@
+<Container id='home' ref='home'>
+    <span slot='header'>transition</span>
+    <el-button @click="show = !show">
+        Toggle
+    </el-button>
+    <br/>
+    <br/>
+    <!-- https://cn.vuejs.org/v2/guide/transitions.html#%E5%8D%95%E5%85%83%E7%B4%A0-%E7%BB%84%E4%BB%B6%E7%9A%84%E8%BF%87%E6%B8%A1 -->
+    <!-- 渡的类名 -->
+    <transition name="home-fade">
+        <p v-if="show">
+            <img class="home-mn-img" src="../../assets/mn.jpg" alt="">
+        </p>
+    </transition>
+</Container>

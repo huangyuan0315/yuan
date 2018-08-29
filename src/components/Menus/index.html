@@ -1,0 +1,9 @@
+<el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="#fff" text-color="black"
+    active-text-color="red">
+    <router-link :to="it.path" v-for="it in menuList" :key="it.name">
+        <el-menu-item :index="it.path">
+            {{it.name}}
+        </el-menu-item>
+    </router-link>
+    <slot></slot>
+</el-menu>

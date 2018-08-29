@@ -1,0 +1,26 @@
+<el-form v-if="showFormLabel" :model="fromData" :rules="rules" :label-position="labelPosition" ref="fromData" label-width="80px">
+    <el-form-item :label="it.name" v-for="it in fromList" :key="it.field" :prop="rules[it.field]?it.field:''">
+        <!-- type = 'date'|| type = 'datetime'|| type = 'month' -->
+        <el-date-picker v-if="(it.type=='date')||(it.type=='datetime')||(it.type=='month')" :type="it.type" v-model="fromData[it.field]"
+            :value-format="(it.type=='date')?'yyyy-MM-dd':((it.type=='month')?'yyyy-MM':'yyyy-MM-dd HH:mm:ss')" class="date-picker"
+            :placeholder="it.placeholder?it.placeholder:''" :disabled="it.disabled?it.disabled:false">
+        </el-date-picker>
+        <!-- type = "select" -->
+        <el-select class="plug-select" v-else-if="it.type=='select'" v-model="fromData[it.field]" clearable :placeholder="it.placeholder?it.placeholder:''">
+            <el-option v-for="item in it.selectlist" :key="item[it.selectvalue]" :label="item[it.selectname]" :value="item[it.selectvalue]">
+            </el-option>
+        </el-select>
+        <!-- type = "radio" -->
+        <el-radio-group v-else-if="it.type=='radio'" v-model="fromData[it.field]">
+            <el-radio v-for="item in it.radiolist" :key='item.value' :label="item.value">{{item.name}}</el-radio>
+        </el-radio-group>
+        <!-- type = "checkbox" -->
+        <el-checkbox v-else-if="it.type=='checkbox'" v-model="fromData[it.field]"></el-checkbox>
+        <el-input v-else :type="it.type?it.type:'text'" v-model="fromData[it.field]" :autosize="it.type=='textarea'?{ minRows: 1, maxRows: 3}:''"
+            :placeholder="it.placeholder?it.placeholder:''" :disabled="it.disabled?it.disabled:false"></el-input>
+    </el-form-item>
+    <el-form-item>
+        <el-button type="primary" @click="sureForm('fromData')">{{sureFormBottonText}}</el-button>
+        <el-button @click="resetForm('fromData')">{{resetFormBottonText}}</el-button>
+    </el-form-item>
+</el-form>

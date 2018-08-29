@@ -1,0 +1,16 @@
+<Container id='transfer' ref='transfer'>
+    <span slot='header'>Transfer 穿梭框</span>
+    <el-transfer filterable :filter-method="filterMethod" filter-placeholder="请输入城市拼音" v-model="value2" :data="data2">
+    </el-transfer>
+    <!-- v-pre 跳过这个元素和它的子元素的编译过程 -->
+    <br/><span v-pre>this will not be compiled</span><br/><br/>
+    <el-input v-model="search" placeholder="输入编码" @change="tableSearch"></el-input>
+    <el-table :data="tableData" style="width: 100%" :default-sort="{prop: 'code', order: 'ascending'}">
+        <el-table-column prop="code" label="编码" sortable width="180">
+        </el-table-column>
+        <el-table-column prop="address" label="地址" :formatter="formatter">
+        </el-table-column>
+    </el-table>
+    <el-pagination slot='footer' :pager-count='5' layout="prev, pager, next" :total="1000">
+    </el-pagination>
+</Container>

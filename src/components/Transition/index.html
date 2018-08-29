@@ -1,0 +1,7 @@
+<!-- https://cn.vuejs.org/v2/api/#transition -->
+<!-- https://cn.vuejs.org/v2/guide/transitions.html#JavaScript-%E9%92%A9%E5%AD%90 -->
+<!-- vue 过渡 & 动画 -->
+<transition name='fade-view' @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @enter-cancelled="enterCancelled"
+    @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave" @leave-cancelled="leaveCancelled">
+    <slot></slot>
+</transition>
